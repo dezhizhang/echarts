@@ -2,24 +2,12 @@ import echarts from 'echarts';
 let root = document.getElementById('root');
 let myCharts = echarts.init(root);
 let option = {
-    toolbox:{
-        feature:{
-            saveAsImage:{ //导出图片
-                show:true,
-            },
-            dataView:{ //数据视图
-                show:true,
-            },
-            restore:{ //数据重置
-                show:true,
-            },
-            dataZoom:{//区域缩放
-                show:true,
-            },
-            magicType:{ //动态图表类形切换
-                type:['bar','line']
-            }
-
+    tooltip:{
+        // trigger:'item',
+        trigger:'item',
+        // triggerOn:'click',
+        formatter:(args) => {
+            return `${args.seriesName}的分数是${args.data}`;
         }
     },
     xAxis:{
