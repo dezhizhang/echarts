@@ -295,3 +295,65 @@ myCharts.setOption(option);
 
 ```
 ![image.png](https://i.loli.net/2021/05/08/2WLag93SJyQDGmB.png)
+### 折线图最大值，最小值，平均值，标注区间，线条，平滑，风格的设置
+```
+import echarts from 'echarts';
+let root = document.getElementById('root');
+let myCharts = echarts.init(root);
+
+let option = {
+    xAxis:{
+        type:'category',
+        data:['一月','二月','三月','四月','五月'],
+    },
+    yAxis:{
+        type:'value'
+    },
+   
+    series:[
+        {
+            type:'line',
+            data:[22,44,20,99,55],
+            markPoint:{
+                data:[
+                    {
+                        type:'max',
+                        name:'最大值'
+                    },
+                    {
+                        type:'min',
+                        name:'最小值'
+                    }
+                ]
+            },
+            markLine:{
+                data:[
+                    {
+                        type:'average',
+                    }
+                ]
+            },
+            smooth:true,
+            lineStyle:{
+                color:'yellow',
+                type:'dashed'
+            },
+            markArea:{
+                data:[
+                    [
+                        {
+                            xAxis:'一月'
+                        },
+                        {
+                            xAxis:'二月'
+                        }
+                ]
+                ]
+            }
+        }
+    ]
+};
+myCharts.setOption(option);
+
+```
+![image.png](https://i.loli.net/2021/05/08/wG8YAEztCpsHgS2.png)

@@ -6,23 +6,14 @@ let option = {
     xAxis:{
         type:'category',
         data:['一月','二月','三月','四月','五月'],
-        boundaryGap:false,
     },
     yAxis:{
-        type:'value',
-        scale:true,
+        type:'value'
     },
-   
     series:[
         {
             type:'line',
-            stack:'all',
-            data:[22,44,20,99,55],
-        },
-        {
-            type:'line',
-            stack:'all',
-            data:[55,66,88,22,10],
+            data:[22,44,20,99,55]
         }
     ]
 };
