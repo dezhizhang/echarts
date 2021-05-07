@@ -2,17 +2,6 @@ import echarts from 'echarts';
 let root = document.getElementById('root');
 let myCharts = echarts.init(root);
 let option = {
-    title:{
-        text:'成绩展示',
-        textStyle:{
-            color:'pink',
-           
-        },
-        borderWidth:2,
-        borderColor:'blue',
-        borderRadius:5,
-       left:'50%',
-    },
     xAxis:{
         type:'category',
         data:['张三','李四','王五','马六','小明','二妞','大强'],
