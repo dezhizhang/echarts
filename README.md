@@ -358,13 +358,13 @@ myCharts.setOption(option);
 ```
 ![image.png](https://i.loli.net/2021/05/08/wG8YAEztCpsHgS2.png)
 ### grid基本配置
-```diff
+```
 import echarts from 'echarts';
 let root = document.getElementById('root');
 let myCharts = echarts.init(root);
 
 let option = {
- 
+   //是否显示
     grid:{
         show:true,
         borderWidth:5,
@@ -396,3 +396,69 @@ let option = {
 myCharts.setOption(option);
 
 ```
+![image.png](https://i.loli.net/2021/05/08/fkiH2z9mqwGIFyP.png)
+### 区域缩放器
+```
+import echarts from 'echarts';
+let root = document.getElementById('root');
+let myCharts = echarts.init(root);
+let option = {
+    dataZoom:[
+        {
+            type:'slider',
+            //type:'inside',
+        }
+    ],
+    xAxis:{
+        type:'category',
+        data:['张三','李四','王五','马六','小明','二妞','大强'],
+    },
+    yAxis:{
+        type:'value'
+    },
+    series:[
+        {   
+            name:'语文',
+            type:'bar',
+            label:{
+                show:true,
+                position:'top',
+            },
+            barWidth:'40%',
+            data:[88,92,63,77,94,80,72,]
+        }
+    ]
+}
+myCharts.setOption(option);
+
+```
+![image.png](https://i.loli.net/2021/05/08/WcApqSrIku3mN2J.png)
+### 饼图的基本实现
+```
+import echarts from 'echarts';
+let root = document.getElementById('root');
+let myCharts = echarts.init(root);
+let option = {
+   series:[
+       {
+            type:'pie',
+            data:[
+                {
+                    name:'京东',
+                    value:998
+                },
+                {
+                    name:'唯品会',
+                    value:2209
+                },
+                {
+                    name:'淘宝',
+                    value:2440
+                }
+            ]
+       }
+   ]
+}
+myCharts.setOption(option);
+```
+![image.png](https://i.loli.net/2021/05/08/c4jJ3vZafDKpIlt.png)
