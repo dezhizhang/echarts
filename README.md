@@ -528,3 +528,118 @@ let option = {
 myCharts.setOption(option);
 ```
 ![image.png](https://i.loli.net/2021/05/08/tXoF4EyrqGZ7H9U.png)
+### 雷达图
+```
+import echarts from 'echarts';
+let root = document.getElementById('root');
+let myCharts = echarts.init(root);
+let option = {
+  radar:{
+      indicator:[
+            {
+                name:'功能',
+                value:100
+            },
+            {
+                name:'拍照',
+                value:100,
+            },
+            {
+                name:'跑分',
+                value:100,
+            },
+            {
+                name:'续航',
+                value:100,
+            },
+            {
+                name:'易用性',
+                value:100
+            }
+        ]
+  },
+  series:[
+    {
+        type:'radar',
+        data:[
+            {
+                name:'华为手机',
+                value:[80,90,80,82,94],
+                type:'specified'
+            },
+            {
+                name:'中兴手机',
+                type:'specified',
+                value:[70,82,75,70,78]
+            }
+        ]
+
+    }
+    ]
+}
+myCharts.setOption(option);
+
+```
+![image.png](https://i.loli.net/2021/05/09/E5AUIBJcvzMZOYS.png)
+### 雷达图显示数值，区域面和，绘制类型的配置
+- 设置label显示数值
+- 设置areaStyle显示面积
+```
+import echarts from 'echarts';
+let root = document.getElementById('root');
+let myCharts = echarts.init(root);
+let option = {
+  radar:{
+    //   shape:'circle',
+      indicator:[
+            {
+                name:'功能',
+                value:100
+            },
+            {
+                name:'拍照',
+                value:100,
+            },
+            {
+                name:'跑分',
+                value:100,
+            },
+            {
+                name:'续航',
+                value:100,
+            },
+            {
+                name:'易用性',
+                value:100
+            }
+        ]
+  },
+  series:[
+    {
+        type:'radar',
+        label:{
+            show:true,
+        },
+        areaStyle:{
+
+        },
+        data:[
+            {
+                name:'华为手机',
+                value:[80,90,80,82,94],
+                type:'specified'
+            },
+            {
+                name:'中兴手机',
+                type:'specified',
+                value:[70,82,75,70,78]
+            }
+        ]
+
+    }
+    ]
+}
+myCharts.setOption(option);
+
+```
+

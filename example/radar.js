@@ -3,7 +3,6 @@ let root = document.getElementById('root');
 let myCharts = echarts.init(root);
 let option = {
   radar:{
-    //   shape:'circle',
       indicator:[
             {
                 name:'功能',
@@ -30,12 +29,6 @@ let option = {
   series:[
     {
         type:'radar',
-        label:{
-            show:true,
-        },
-        areaStyle:{
-
-        },
         data:[
             {
                 name:'华为手机',
