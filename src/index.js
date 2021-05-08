@@ -3,6 +3,11 @@ let root = document.getElementById('root');
 let myCharts = echarts.init(root);
 
 let option = {
+    grid:{
+        show:true,
+        borderWidth:5,
+        borderColor:'pink',
+    },
     xAxis:{
         type:'category',
         data:['一月','二月','三月','四月','五月'],
