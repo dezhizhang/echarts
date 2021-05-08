@@ -642,4 +642,23 @@ let option = {
 myCharts.setOption(option);
 
 ```
+![image.png](https://i.loli.net/2021/05/09/x1XuLtsjZGypYFd.png)
+### 仪表盘
+```
+import echarts from 'echarts';
+let root = document.getElementById('root');
+let myCharts = echarts.init(root);
+let option = {
+  series:[{
+      type:'gauge',
+      data:[
+          {
+              value:97,
 
+          }
+        ]
+  }]
+}
+myCharts.setOption(option);
+```
+![image.png](https://i.loli.net/2021/05/09/I9og5GLMx2f7umb.png)
