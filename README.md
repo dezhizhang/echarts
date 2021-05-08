@@ -1,6 +1,6 @@
 # echarts 相关学习
 ### 柱状图 
-```diff
+```
 import echarts from 'echarts';
 
 let root = document.getElementById('root');
@@ -28,7 +28,7 @@ myCharts.setOption(options);
 
 ```
 ### 柱状图配置最大值最小值平均值
-```diff
+```
 import echarts from 'echarts';
 let root = document.getElementById('root');
 let myCharts = echarts.init(root);
@@ -46,31 +46,31 @@ let option = {
             type:'bar',
             +markPoint:{
                 +data:[
-                    +{
-                        +type:'max',
-                        +name:'最大值',
-                    +},
-                    +{
-                        +type:'min',
-                        +name:'最小值'
-                    +}
-                +]
-            +},
-            +markLine:{
-                +data:[
-                    +{
-                        +type:'average',
-                        +name:'平均值',
-                    +}
-                +]
-            +},
-            +data:[88,92,63,77,94,80,72,]
-        +}
-    +]
-+}
-+myCharts.setOption(option);
+                    {
+                        type:'max',
+                        name:'最大值',
+                    },
+                    {
+                        type:'min',
+                        name:'最小值'
+                    }
+                ]
+            },
+            markLine:{
+                data:[
+                    {
+                        type:'average',
+                        name:'平均值',
+                    }
+                ]
+            },
+            data:[88,92,63,77,94,80,72,]
+        }
+   ]
+}
+myCharts.setOption(option);
 
-```diff
+```
 ![image.png](https://i.loli.net/2021/05/07/zHBik6MFaWQvSUe.png)
 ### 柱状图 娄值 柱宽度 显示设置
 ```
@@ -89,18 +89,18 @@ let option = {
         {   
             name:'语文',
             type:'bar',
-            +label:{
-                +show:true,
-                +position:'top',
-            +},
-            +barWidth:'40%',
+            label:{
+                show:true,
+                position:'top',
+            },
+            barWidth:'40%',
             data:[88,92,63,77,94,80,72,]
         }
     ]
 }
 myCharts.setOption(option);
 
-```diff
+```
 ![image.png](https://i.loli.net/2021/05/07/5xcZBwQar46mCGn.png)
 ### 通用配置title
 ```
@@ -108,17 +108,17 @@ import echarts from 'echarts';
 let root = document.getElementById('root');
 let myCharts = echarts.init(root);
 let option = {
-    +title:{
-        +text:'成绩展示',
-        +textStyle:{
-            +color:'pink',
+    title:{
+        text:'成绩展示',
+        textStyle:{
+            color:'pink',
            
-        +},
-        +borderWidth:2,
-        +borderColor:'blue',
-        +borderRadius:5,
-        +left:'50%',
-    +},
+        },
+        borderWidth:2,
+        borderColor:'blue',
+        borderRadius:5,
+        left:'50%',
+    },
     xAxis:{
         type:'category',
         data:['张三','李四','王五','马六','小明','二妞','大强'],
@@ -144,7 +144,7 @@ myCharts.setOption(option);
 ```
 ![image.png](https://i.loli.net/2021/05/08/gpN6HeMyscBODlz.png)
 ### tooltip的通用配置 触发类型trigger,触发时机triggerOn格式化formatter
-```diff
+```
 import echarts from 'echarts';
 let root = document.getElementById('root');
 let myCharts = echarts.init(root);
@@ -182,7 +182,7 @@ myCharts.setOption(option);
 ```
 ![image.png](https://i.loli.net/2021/05/08/3X2YFskQIOiCAhT.png)
 ### toolbox工具栏配置 导出图片，动态类型，数据区域缩放
-```diff
+```
 import echarts from 'echarts';
 let root = document.getElementById('root');
 let myCharts = echarts.init(root);
@@ -462,3 +462,69 @@ let option = {
 myCharts.setOption(option);
 ```
 ![image.png](https://i.loli.net/2021/05/08/c4jJ3vZafDKpIlt.png)
+### 显示数值的设置
+```
+import echarts from 'echarts';
+let root = document.getElementById('root');
+let myCharts = echarts.init(root);
+let option = {
+   series:[
+       {
+            type:'pie',
+            data:[
+                {
+                    name:'京东',
+                    value:998
+                },
+                {
+                    name:'唯品会',
+                    value:2209
+                },
+                {
+                    name:'淘宝',
+                    value:2440
+                }
+            ],
+            label:{
+                show:true,
+                formatter:(values) =>  {
+                    return `${values.name}所占百分比${(values.percent)+'%'}`
+                }
+            }
+       }
+   ]
+}
+myCharts.setOption(option);
+
+```
+![image.png](https://i.loli.net/2021/05/08/KOXgwutzScQ1Isv.png)
+### 设置圆环
+```
+import echarts from 'echarts';
+let root = document.getElementById('root');
+let myCharts = echarts.init(root);
+let option = {
+   series:[
+       {
+            type:'pie',
+            data:[
+                {
+                    name:'京东',
+                    value:998
+                },
+                {
+                    name:'唯品会',
+                    value:2209
+                },
+                {
+                    name:'淘宝',
+                    value:2440
+                }
+            ],
+            radius:['50%','75%']
+       }
+   ]
+}
+myCharts.setOption(option);
+```
+![image.png](https://i.loli.net/2021/05/08/tXoF4EyrqGZ7H9U.png)

@@ -19,7 +19,12 @@ let option = {
                     value:2440
                 }
             ],
-            radius:['50%','75%']
+            label:{
+                show:true,
+                formatter:(values) =>  {
+                    return `${values.name}所占百分比${(values.percent)+'%'}`
+                }
+            }
        }
    ]
 }

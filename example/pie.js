@@ -18,8 +18,7 @@ let option = {
                     name:'淘宝',
                     value:2440
                 }
-            ],
-            radius:['50%','75%']
+            ]
        }
    ]
 }
