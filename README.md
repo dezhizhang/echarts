@@ -662,3 +662,63 @@ let option = {
 myCharts.setOption(option);
 ```
 ![image.png](https://i.loli.net/2021/05/09/I9og5GLMx2f7umb.png)
+### 主题的使用
+- 两套主是分别是dark和light
+```
+import echarts from 'echarts';
+let root = document.getElementById('root');
+let myCharts = echarts.init(root,'dark');
+let option = {
+  series:[{
+      type:'gauge',
+      data:[
+          {
+              value:97,
+
+          }
+        ]
+  }]
+}
+myCharts.setOption(option);
+```
+![image.png](https://i.loli.net/2021/05/09/SQEYOGztlH3CpL4.png)
+
+### 自适应
+```
+import echarts from 'echarts';
+let root = document.getElementById('root');
+let myCharts = echarts.init(root);
+window.onresize = myCharts.resize;
+let option = {
+    color:['pink','pink','yellow'],
+    tooltip:{
+        // trigger:'item',
+        trigger:'item',
+        // triggerOn:'click',
+        formatter:(args) => {
+            return `${args.seriesName}的分数是${args.data}`;
+        }
+    },
+    xAxis:{
+        type:'category',
+        data:['张三','李四','王五','马六','小明','二妞','大强'],
+    },
+    yAxis:{
+        type:'value'
+    },
+    series:[
+        {   
+            name:'语文',
+            type:'bar',
+            label:{
+                show:true,
+                position:'top',
+            },
+            barWidth:'40%',
+            data:[88,92,63,77,94,80,72,]
+        }
+    ]
+}
+myCharts.setOption(option);
+
+```
